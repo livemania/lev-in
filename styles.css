@@ -1,0 +1,839 @@
+/* ===========================
+   전역 스타일
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e3f2fd 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ===========================
+   헤더 스타일
+   =========================== */
+
+.header {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(224, 242, 254, 0.9) 100%);
+    border-bottom: 3px solid #00c853;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2c3e50;
+}
+
+.logo-image {
+    height: 40px;
+    width: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
+}
+
+.logo-icon {
+    color: #00c853;
+    font-size: 1.8rem;
+}
+
+.company-name {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+}
+
+.nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 1.1rem 2.8rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.1) 0%, rgba(0, 228, 118, 0.05) 100%);
+    border: 2px solid;
+    border-image: linear-gradient(135deg, #00c853 0%, #00e676 100%) 1;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    overflow: hidden;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00c853, #00e676);
+    border-radius: 2px;
+    transition: width 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 2px 8px rgba(0, 200, 83, 0.3);
+}
+
+.nav a:hover {
+    color: #00c853;
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.15) 0%, rgba(0, 228, 118, 0.1) 100%);
+    border-image: linear-gradient(135deg, #00c853, #00e676) 1;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 200, 83, 0.25);
+}
+
+.nav a:hover::after {
+    width: 90%;
+}
+
+/* ===========================
+   메인 컨텐츠
+   =========================== */
+
+.main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #7e8c94;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* ===========================
+   제품 섹션
+   =========================== */
+
+.product-section {
+    background: linear-gradient(180deg, rgba(232, 241, 247, 0.5) 0%, rgba(227, 242, 253, 0.5) 100%);
+    border-bottom: 1px solid rgba(0, 200, 83, 0.2);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 12px;component-image
+    overflow: hidden;
+    border: 2px solid rgba(0, 200, 83, 0.2);
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    border-color: #00c853;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 200, 83, 0.2);
+}
+
+.product-image-card {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    background: linear-gradient(135deg, #d0e8ff 0%, #c8f7c5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 2px solid rgba(0, 200, 83, 0.15);
+}
+
+.product-image-card svg {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.35s ease;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-image-card svg {
+    transform: scale(1.05);
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.product-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.product-info p {
+    font-size: 0.92rem;
+    color: #546e7a;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
+}
+
+.view-button {
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #00c853 0%, #00e676 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    box-shadow: 0 3px 12px rgba(0, 200, 83, 0.25);
+}
+
+.view-button:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 18px rgba(0, 200, 83, 0.4);
+}
+
+.view-button:active {
+    transform: translateX(2px);
+}
+
+/* ===========================
+   동영상 섹션
+   =========================== */
+
+.video-section {
+    background: linear-gradient(180deg, rgba(227, 242, 253, 0.5) 0%, rgba(232, 241, 247, 0.5) 100%);
+    border-bottom: 1px solid rgba(0, 200, 83, 0.2);
+}
+
+.video-container {
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #d0e8ff 0%, #c8f7c5 100%);
+    border-radius: 8px;
+    border: 2px solid #00c853;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 200, 83, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.video-placeholder video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.video-placeholder:hover {
+    box-shadow: 0 15px 60px rgba(0, 200, 83, 0.2);
+    transform: scale(1.01);
+}
+
+.video-placeholder svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 200, 83, 0.9);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 200, 83, 0.4);
+}
+
+.play-button:hover {
+    background: #00c853;
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 200, 83, 0.6);
+}
+
+/* ===========================
+   부품 섹션
+   =========================== */
+
+.components-section {
+    background: linear-gradient(180deg, rgba(232, 241, 247, 0.5) 0%, rgba(227, 242, 253, 0.5) 100%);
+}
+
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.component-card {
+    background: linear-gradient(135deg, rgba(208, 232, 255, 0.5) 0%, rgba(200, 247, 197, 0.5) 100%);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 200, 83, 0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.component-card:nth-child(1) { animation-delay: 0.1s; }
+.component-card:nth-child(2) { animation-delay: 0.2s; }
+.component-card:nth-child(3) { animation-delay: 0.3s; }
+.component-card:nth-child(4) { animation-delay: 0.4s; }
+.component-card:nth-child(5) { animation-delay: 0.5s; }
+.component-card:nth-child(6) { animation-delay: 0.6s; }
+
+.component-card:hover {
+    background: linear-gradient(135deg, rgba(208, 232, 255, 0.8) 0%, rgba(200, 247, 197, 0.8) 100%);
+    border-color: #00c853;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 200, 83, 0.2);
+}
+
+.component-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background: rgba(0, 200, 83, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 200, 83, 0.2);
+}
+
+.component-card:hover .component-icon {
+    background: rgba(0, 200, 83, 0.2);
+    border-color: #00c853;
+    transform: scale(1.1);
+}
+
+.component-icon svg {
+    width: 210px;
+    height: 130px;
+}
+
+.component-image {
+    width: 200px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.component-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.component-card p {
+    color: #546e7a;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ===========================
+   푸터 스타일
+   =========================== */
+
+.footer {
+    background: rgba(255, 255, 255, 0.95);
+    border-top: 2px solid #00c853;
+    margin-top: 6rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-container p {
+    color: #909090;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #7e8c94;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #00c853;
+}
+
+/* ===========================
+   모달 스타일
+   =========================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInOverlay 0.3s ease;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 12px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideInCenter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid rgba(0, 200, 83, 0.3);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 200, 83, 0.1);
+    border-radius: 50%;
+    z-index: 2001;
+    border: 1px solid rgba(0, 200, 83, 0.2);
+}
+
+.modal-close:hover {
+    color: #00c853;
+    background: rgba(0, 200, 83, 0.2);
+    transform: rotate(90deg) scale(1.1);
+}
+
+.modal-body {
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    border-radius: 8px;
+    animation: zoomIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal-footer {
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.05) 0%, rgba(0, 228, 118, 0.05) 100%);
+    border-top: 1px solid rgba(0, 200, 83, 0.2);
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+.modal-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+        min-height: 250px;
+    }
+
+    .modal-image {
+        max-height: 50vh;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        font-size: 2rem;
+        width: 35px;
+        height: 35px;
+    }
+
+    .modal-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* ===========================
+   애니메이션
+   =========================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInCenter {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===========================
+   반응형 디자인
+   =========================== */
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .logo-image {
+        height: 55px;
+    }
+
+    .company-name {
+        font-size: 1.8rem;
+    }
+
+    .nav ul {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav a {
+        font-size: 1.15rem;
+        padding: 0.9rem 2rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .main-title {
+        font-size: 2.2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .products-grid {
+        gap: 2rem;
+    }
+
+    .product-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .components-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .component-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+
+    .video-placeholder {
+        aspect-ratio: auto;
+        min-height: 300px;
+    }
+
+    .video-placeholder video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .logo-image {
+        height: 50px;
+    }
+
+    .company-name {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    .nav ul {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav a {
+        font-size: 1rem;
+        padding: 0.7rem 1.3rem;
+    }
+
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    .main-title {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .product-description p {
+        font-size: 0.9rem;
+    }
+
+    .features-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .component-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .component-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .component-card p {
+        font-size: 0.85rem;
+    }
+
+    .footer-container {
+        padding: 2rem 1rem;
+    }
+
+    .footer-container p {
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .video-placeholder {
+        aspect-ratio: auto;
+        min-height: 250px;
+        border-radius: 6px;
+    }
+
+    .video-placeholder video {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ===========================
+   다크모드 기본 (이미 적용됨)
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
